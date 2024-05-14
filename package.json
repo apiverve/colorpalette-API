@@ -11,7 +11,7 @@
     "url": "git+https://github.com/apiverve/colorpalette-API.git"
   },
   "keywords": [
-    "color palette"," color palette generator"," color palette api"," color palette tool"," color palette software"," color palette service"," color palette library"," color palette sdk"," color palette code"," color palette script"," color palette program"," color palette application"," color palette app"," color palette utility"," color palette helper"," color palette helper tool"," color palette helper software"," color palette helper service"," color palette helper library"," color palette helper sdk"," color palette helper code"," color palette helper script"," color palette helper program"," color palette helper application"," color palette helper app"," color palette helper tool"," color palette helper utility"," color palette helper"
+    "color palette","color palette generator","color palette api","color palette tool","color palette software"
   ],
   "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
   "license": "MIT",
@@ -27,6 +27,6 @@
   "dependencies": {
     "node-fetch": "3.3.2",
     "promise": "^7.1.1",
-    "request": "^2.69.0"
+    "axios": "^0.15.3"
   }
 }

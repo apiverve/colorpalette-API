@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/colorpalette",
-  "version": "1.0.2",
-  "description": "Color Palette is a simple tool for generating color palettes. It returns a list of colors.",
+  "version": "1.0.3",
+  "description": "Color Palette is a simple tool for generating color palettes. It returns a list of colors based on a given color input.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"

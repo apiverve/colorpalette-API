@@ -1,0 +1,113 @@
+openapi: 3.0.4
+info:
+  title: Color Palette Generator
+  description: Color Palette is a simple tool for generating color palettes. It returns a list of colors based on a given color input.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/colorpalette:
+    get:
+      summary: Generate Palette
+      description: Color Palette is a simple tool for generating color palettes. It returns a list of colors based on a given color input.
+      operationId: colorpalette
+      parameters:
+      - name: color
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The base color to generate the palette from (e.g., FF5733)
+        example: FF5733
+      - name: variation
+        default: soft
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The variation of the color palette (e.g., soft, hard, pastel, light, pale)
+        example: soft
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  source: '#FF5733'
+                  hue: 11
+                  variation: soft
+                  colorPalette:
+                  - hex: '#cc988f'
+                    name: Oriental Pink
+                  - hex: '#805f59'
+                    name: Russett
+                  - hex: '#e6d2cf'
+                    name: Dust Storm
+                  - hex: '#bf6e60'
+                    name: Contessa
+                  - hex: '#a2cc8f'
+                    name: Pine Glade
+                  - hex: '#658059'
+                    name: Glade Green
+                  - hex: '#d6e6cf'
+                    name: Willow Brook
+                  - hex: '#7dbf60'
+                    name: Mantis
+                  - hex: '#607b89'
+                    name: Lynch
+                  - hex: '#597380'
+                    name: Cutty Sark
+                  - hex: '#cfdee6'
+                    name: Botticelli
+                  - hex: '#60a0bf'
+                    name: Fountain Blue
+                  colorPaletteRaw:
+                  - cc988f
+                  - 805f59
+                  - e6d2cf
+                  - bf6e60
+                  - a2cc8f
+                  - '658059'
+                  - d6e6cf
+                  - 7dbf60
+                  - 607b89
+                  - '597380'
+                  - cfdee6
+                  - 60a0bf
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
